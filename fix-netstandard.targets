@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- VS Build Tools 已自带 netstandard，此文件只保留项目需要的额外引用 -->
+  <!-- AntdUI 控件库 -->
+  <ItemGroup>
+    <Reference Include="AntdUI">
+      <HintPath>$(MSBuildProjectDirectory)\beautify\antdui\AntdUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- 将 ThemeHelper.cs 加入编译 -->
+  <ItemGroup>
+    <Compile Include="ThemeHelper.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="BarcodeMainApp.csproj" Id="31787df7-a9f9-4f1b-9d5e-d5f7eb5c694e">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

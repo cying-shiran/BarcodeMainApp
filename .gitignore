@@ -1,0 +1,18 @@
+﻿## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.sln.docstates
+
+## NuGet
+packages/
+*.nupkg
+
+## Build tools
+nuget.exe
+
+## IDE
+.vs/
+*.csproj.user
