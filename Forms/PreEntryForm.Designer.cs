@@ -86,14 +86,13 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(976, 731);
+            this.tabPage1.Size = new System.Drawing.Size(976, 724);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "基础数据";
-            //this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -110,7 +109,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlButtons);
             this.splitContainer1.Panel2.Controls.Add(this.dgvData);
-            this.splitContainer1.Size = new System.Drawing.Size(968, 723);
+            this.splitContainer1.Size = new System.Drawing.Size(968, 716);
             this.splitContainer1.SplitterDistance = 171;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -119,7 +118,7 @@
             // 
             this.lstTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstTables.FormattingEnabled = true;
-            this.lstTables.ItemHeight = 38;
+            this.lstTables.ItemHeight = 24;
             this.lstTables.Items.AddRange(new object[] {
             "品牌",
             "涂层",
@@ -130,7 +129,7 @@
             this.lstTables.Location = new System.Drawing.Point(0, 0);
             this.lstTables.Margin = new System.Windows.Forms.Padding(4);
             this.lstTables.Name = "lstTables";
-            this.lstTables.Size = new System.Drawing.Size(171, 723);
+            this.lstTables.Size = new System.Drawing.Size(171, 716);
             this.lstTables.TabIndex = 0;
             this.lstTables.SelectedIndexChanged += new System.EventHandler(this.lstTables_SelectedIndexChanged);
             // 
@@ -141,7 +140,7 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 652);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 645);
             this.pnlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(792, 71);
@@ -149,35 +148,32 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(700, 4);
+            this.btnDelete.Location = new System.Drawing.Point(688, 4);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 40);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "删除";
-            //this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(604, 4);
+            this.btnEdit.Location = new System.Drawing.Point(580, 4);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 40);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "编辑";
-            //this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(508, 4);
+            this.btnAdd.Location = new System.Drawing.Point(472, 4);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 40);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "新增";
-            //this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvData
@@ -187,21 +183,21 @@
             this.dgvData.Location = new System.Drawing.Point(0, 0);
             this.dgvData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvData.Name = "dgvData";
+            this.dgvData.RowHeadersWidth = 62;
             this.dgvData.RowTemplate.Height = 23;
-            this.dgvData.Size = new System.Drawing.Size(792, 723);
+            this.dgvData.Size = new System.Drawing.Size(792, 716);
             this.dgvData.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(976, 731);
+            this.tabPage2.Size = new System.Drawing.Size(976, 724);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "关联关系";
-            //this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
@@ -217,7 +213,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(968, 723);
+            this.splitContainer2.Size = new System.Drawing.Size(968, 716);
             this.splitContainer2.SplitterDistance = 322;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -228,7 +224,7 @@
             this.tvRelations.Location = new System.Drawing.Point(0, 0);
             this.tvRelations.Margin = new System.Windows.Forms.Padding(4);
             this.tvRelations.Name = "tvRelations";
-            this.tvRelations.Size = new System.Drawing.Size(322, 723);
+            this.tvRelations.Size = new System.Drawing.Size(322, 716);
             this.tvRelations.TabIndex = 0;
             this.tvRelations.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRelations_AfterSelect);
             // 
@@ -245,7 +241,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(641, 723);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(641, 716);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -256,7 +252,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(633, 498);
+            this.groupBox1.Size = new System.Drawing.Size(633, 493);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "添加新关联";
@@ -276,7 +272,7 @@
             this.tableLayoutPanel2.Controls.Add(this.cmbSpec, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.btnAddRelation, 1, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 20);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 28);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
@@ -285,7 +281,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(625, 474);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(625, 461);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -296,7 +292,7 @@
             this.labCat.Location = new System.Drawing.Point(4, 0);
             this.labCat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labCat.Name = "labCat";
-            this.labCat.Size = new System.Drawing.Size(117, 94);
+            this.labCat.Size = new System.Drawing.Size(117, 92);
             this.labCat.TabIndex = 0;
             this.labCat.Text = "类别：";
             this.labCat.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -308,7 +304,7 @@
             this.cmbCat.Location = new System.Drawing.Point(129, 4);
             this.cmbCat.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCat.Name = "cmbCat";
-            this.cmbCat.Size = new System.Drawing.Size(492, 25);
+            this.cmbCat.Size = new System.Drawing.Size(492, 32);
             this.cmbCat.TabIndex = 1;
             this.cmbCat.SelectedIndexChanged += new System.EventHandler(this.cmbCat_SelectedIndexChanged);
             // 
@@ -316,10 +312,10 @@
             // 
             this.labTool.AutoSize = true;
             this.labTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labTool.Location = new System.Drawing.Point(4, 94);
+            this.labTool.Location = new System.Drawing.Point(4, 92);
             this.labTool.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labTool.Name = "labTool";
-            this.labTool.Size = new System.Drawing.Size(117, 94);
+            this.labTool.Size = new System.Drawing.Size(117, 92);
             this.labTool.TabIndex = 2;
             this.labTool.Text = "刀具名称：";
             this.labTool.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -328,10 +324,10 @@
             // 
             this.labCode.AutoSize = true;
             this.labCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labCode.Location = new System.Drawing.Point(4, 188);
+            this.labCode.Location = new System.Drawing.Point(4, 184);
             this.labCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labCode.Name = "labCode";
-            this.labCode.Size = new System.Drawing.Size(117, 94);
+            this.labCode.Size = new System.Drawing.Size(117, 92);
             this.labCode.TabIndex = 3;
             this.labCode.Text = "编号：";
             this.labCode.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -340,10 +336,10 @@
             // 
             this.labSpec.AutoSize = true;
             this.labSpec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labSpec.Location = new System.Drawing.Point(4, 282);
+            this.labSpec.Location = new System.Drawing.Point(4, 276);
             this.labSpec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labSpec.Name = "labSpec";
-            this.labSpec.Size = new System.Drawing.Size(117, 94);
+            this.labSpec.Size = new System.Drawing.Size(117, 92);
             this.labSpec.TabIndex = 4;
             this.labSpec.Text = "规格：";
             this.labSpec.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -352,10 +348,10 @@
             // 
             this.cmbTool.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbTool.FormattingEnabled = true;
-            this.cmbTool.Location = new System.Drawing.Point(129, 98);
+            this.cmbTool.Location = new System.Drawing.Point(129, 96);
             this.cmbTool.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTool.Name = "cmbTool";
-            this.cmbTool.Size = new System.Drawing.Size(492, 25);
+            this.cmbTool.Size = new System.Drawing.Size(492, 32);
             this.cmbTool.TabIndex = 5;
             this.cmbTool.SelectedIndexChanged += new System.EventHandler(this.cmbTool_SelectedIndexChanged);
             // 
@@ -363,10 +359,10 @@
             // 
             this.cmbCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCode.FormattingEnabled = true;
-            this.cmbCode.Location = new System.Drawing.Point(129, 192);
+            this.cmbCode.Location = new System.Drawing.Point(129, 188);
             this.cmbCode.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCode.Name = "cmbCode";
-            this.cmbCode.Size = new System.Drawing.Size(492, 25);
+            this.cmbCode.Size = new System.Drawing.Size(492, 32);
             this.cmbCode.TabIndex = 6;
             this.cmbCode.SelectedIndexChanged += new System.EventHandler(this.cmbCode_SelectedIndexChanged);
             // 
@@ -374,39 +370,37 @@
             // 
             this.cmbSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbSpec.FormattingEnabled = true;
-            this.cmbSpec.Location = new System.Drawing.Point(129, 286);
+            this.cmbSpec.Location = new System.Drawing.Point(129, 280);
             this.cmbSpec.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSpec.Name = "cmbSpec";
-            this.cmbSpec.Size = new System.Drawing.Size(492, 25);
+            this.cmbSpec.Size = new System.Drawing.Size(492, 32);
             this.cmbSpec.TabIndex = 7;
             this.cmbSpec.SelectedIndexChanged += new System.EventHandler(this.cmbSpec_SelectedIndexChanged);
             // 
             // btnAddRelation
             // 
             this.btnAddRelation.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddRelation.Location = new System.Drawing.Point(533, 408);
+            this.btnAddRelation.Location = new System.Drawing.Point(533, 398);
             this.btnAddRelation.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddRelation.Name = "btnAddRelation";
             this.btnAddRelation.Size = new System.Drawing.Size(88, 33);
             this.btnAddRelation.TabIndex = 8;
             this.btnAddRelation.Text = "添加关联";
-            //this.btnAddRelation.UseVisualStyleBackColor = true;
             this.btnAddRelation.Click += new System.EventHandler(this.btnAddRelation_Click);
             // 
             // btnDeleteRelation
             // 
-            this.btnDeleteRelation.Location = new System.Drawing.Point(4, 510);
+            this.btnDeleteRelation.Location = new System.Drawing.Point(4, 505);
             this.btnDeleteRelation.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteRelation.Name = "btnDeleteRelation";
             this.btnDeleteRelation.Size = new System.Drawing.Size(130, 33);
             this.btnDeleteRelation.TabIndex = 1;
             this.btnDeleteRelation.Text = "删除选中关联";
-            //this.btnDeleteRelation.UseVisualStyleBackColor = true;
             this.btnDeleteRelation.Click += new System.EventHandler(this.btnDeleteRelation_Click);
             // 
             // PreEntryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.tabControl1);

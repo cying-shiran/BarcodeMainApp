@@ -10,6 +10,9 @@ namespace BarcodeMainApp
 {
     public static class ThemeHelper
     {
+        // 缓存背景图，避免重复加载
+        private static Image _cachedBg444;
+        private static Image _cachedGridBg;
         // ═══════════════════════════════════════════════════
         //  天蓝色配色方案
         // ═══════════════════════════════════════════════════
@@ -197,7 +200,10 @@ namespace BarcodeMainApp
                 else if (c is CheckBox chk)              { chk.ForeColor = ColorBody; chk.FlatStyle = FlatStyle.Flat; }
                 else if (c is ComboBox cb)               { cb.FlatStyle = FlatStyle.Flat; cb.BackColor = Color.White; }
                 else if (c is ListBox lb)                { StyleListBox(lb); }
+                else if (c is TreeView tv)               { StyleTreeView(tv); }
                 else if (c is TabControl tc)             { StyleTabControl(tc); }
+                else if (c is TabPage tp)                { StyleTabPage(tp); }
+                else if (c is SplitContainer sc)         { sc.BackColor = Color.Transparent; }
                 else if (c is TableLayoutPanel tlp)      { tlp.BackColor = Color.Transparent; }
 
                 // 始终递归子控件
@@ -241,9 +247,9 @@ namespace BarcodeMainApp
             }
             else
             {
-                btn.Type = AntdUI.TTypeMini.Default;
-                btn.BackColor = Color.FromArgb(230, 242, 255);
-                btn.ForeColor = Color.FromArgb(0, 80, 180);
+                btn.Type = AntdUI.TTypeMini.Primary;
+                btn.BackColor = Color.FromArgb(100, 180, 255);
+                btn.ForeColor = Color.Black;
             }
         }
 
@@ -271,7 +277,21 @@ namespace BarcodeMainApp
         private static void StyleListBox(System.Windows.Forms.ListBox lb)
         {
             lb.BorderStyle = BorderStyle.None;
-            lb.BackColor = Color.FromArgb(240, 245, 252);
+            lb.BackColor = Color.FromArgb(238, 245, 255);
+            // 给 ListBox 自身设网格背景
+            if (_cachedGridBg == null)
+            {
+                int gs = 20;
+                var bmp = new Bitmap(gs, gs);
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.Clear(Color.FromArgb(238, 245, 255));
+                    using (var pen = new Pen(Color.FromArgb(215, 228, 245)))
+                    { g.DrawLine(pen, 0, 0, gs, 0); g.DrawLine(pen, 0, 0, 0, gs); }
+                }
+                _cachedGridBg = bmp;
+            }
+            try { lb.BackgroundImage = _cachedGridBg; lb.BackgroundImageLayout = ImageLayout.Tile; } catch { }
             lb.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Bold);
             lb.DrawMode = DrawMode.OwnerDrawFixed;
             lb.ItemHeight = 42;
@@ -297,6 +317,7 @@ namespace BarcodeMainApp
                 TextRenderer.DrawText(g, lb.Items[e.Index].ToString(), lb.Font, rect, fg,
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
             };
+
         }
 
         // ═══════════════════════════════════════════════════
@@ -334,6 +355,52 @@ namespace BarcodeMainApp
         }
 
         // ═══════════════════════════════════════════════════
+        //  TabPage（标签页背景）
+        // ═══════════════════════════════════════════════════
+        private static void StyleTabPage(System.Windows.Forms.TabPage tp)
+        {
+            // 两个标签页都用蓝色网格背景
+            if (tp.Text == "基础数据" || tp.Text == "关联关系")
+            {
+                // 生成网格状天蓝色背景（缓存，只生成一次）
+                if (_cachedGridBg == null)
+                {
+                    int gridSize = 20;
+                    var bmp = new Bitmap(gridSize, gridSize);
+                    using (var g = Graphics.FromImage(bmp))
+                    {
+                        g.Clear(Color.FromArgb(238, 245, 255));
+                        using (var pen = new Pen(Color.FromArgb(215, 228, 245)))
+                        {
+                            g.DrawLine(pen, 0, 0, gridSize, 0);
+                            g.DrawLine(pen, 0, 0, 0, gridSize);
+                        }
+                    }
+                    _cachedGridBg = bmp;
+                }
+                tp.BackgroundImage = _cachedGridBg;
+                tp.BackgroundImageLayout = ImageLayout.Tile;
+            }
+        }
+
+        // ═══════════════════════════════════════════════════
+        //  TreeView（扁平风格）
+        // ═══════════════════════════════════════════════════
+        private static void StyleTreeView(System.Windows.Forms.TreeView tv)
+        {
+            tv.ForeColor = Color.FromArgb(40, 50, 70);
+            tv.Font = new Font("Microsoft YaHei UI", 10F);
+            tv.LineColor = Color.FromArgb(190, 210, 230);
+            tv.BorderStyle = BorderStyle.None;
+            tv.FullRowSelect = true;
+            tv.HotTracking = true;
+            tv.ShowLines = true;
+
+            // 555.jpg 不直接设 TreeView 背景（显示不出来），改为设父容器背景
+            tv.BackColor = Color.White;
+        }
+
+        // ═══════════════════════════════════════════════════
         //  卡片（加大圆角 + 阴影）
         // ═══════════════════════════════════════════════════
         private static void StyleGroupBox(System.Windows.Forms.GroupBox gb)
@@ -360,6 +427,17 @@ namespace BarcodeMainApp
                 if (System.IO.File.Exists(dgvBg))
                 {
                     gb.BackgroundImage = Image.FromFile(dgvBg);
+                    gb.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+            }
+            else if (gb.FindForm() is PreEntryForm && gb.Text == "添加新关联")
+            {
+                // 关联关系页面的卡片用 555.jpg
+                gb.BackColor = Color.White;
+                string cardBg = "D:\\wwwww\\BarcodeMainApp-master\\beautify\\555.jpg";
+                if (System.IO.File.Exists(cardBg))
+                {
+                    gb.BackgroundImage = Image.FromFile(cardBg);
                     gb.BackgroundImageLayout = ImageLayout.Stretch;
                 }
             }
