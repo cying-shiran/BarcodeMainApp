@@ -16,3 +16,6 @@ nuget.exe
 ## IDE
 .vs/
 *.csproj.user
+
+## NuGet publish script (contains API key)
+.build/
